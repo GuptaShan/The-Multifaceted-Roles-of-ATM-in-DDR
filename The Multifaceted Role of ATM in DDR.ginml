@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gxl SYSTEM "http://gin.univ-mrs.fr/GINsim/GINML_2_1.dtd">
+<gxl>
+  <graph id="defaultID" class="regulatory" nodeorder="DDR ATM p53 Mdm2 miR_34a miR_200 Snail1 ZEB1 VIM CDH1 PTEN Casp AKT BAX Bcl2 SOX2 PROLIFERATION STEMNESS EMT DRUG_RESISTANCE DRUG_SENSITIVITY APOPTOSIS">
+    <node id="DDR" maxvalue="1">
+      <parameter val="1" idActiveInteractions="DDR:DDR:1"/>
+      <annotation>
+        <comment>DDR is an input node marked with an auto-regulation.</comment>
+      </annotation>
+    </node>
+    <node id="ATM" maxvalue="1">
+      <parameter val="1" idActiveInteractions="DDR:ATM:1"/>
+    </node>
+    <node id="p53" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ATM:p53:1"/>
+    </node>
+    <node id="Mdm2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="AKT:Mdm2:1"/>
+      <parameter val="1" idActiveInteractions="PTEN:Mdm2:1 AKT:Mdm2:1"/>
+      <parameter val="1" idActiveInteractions="p53:Mdm2:1 AKT:Mdm2:1"/>
+      <parameter val="1" idActiveInteractions="p53:Mdm2:1 PTEN:Mdm2:1 AKT:Mdm2:1"/>
+      <parameter val="1" idActiveInteractions="ATM:Mdm2:1 AKT:Mdm2:1"/>
+      <parameter val="1" idActiveInteractions="ATM:Mdm2:1 p53:Mdm2:1 AKT:Mdm2:1"/>
+      <parameter val="1" idActiveInteractions="ATM:Mdm2:1 p53:Mdm2:1 PTEN:Mdm2:1 AKT:Mdm2:1"/>
+    </node>
+    <node id="miR_34a" maxvalue="1">
+      <parameter val="1" idActiveInteractions="p53:miR_34a:1"/>
+    </node>
+    <node id="miR_200" maxvalue="1">
+      <parameter val="1" idActiveInteractions="p53:miR_200:1"/>
+    </node>
+    <node id="Snail1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ATM:Snail1:1"/>
+    </node>
+    <node id="ZEB1" maxvalue="1">
+      <parameter val="1" idActiveInteractions="Snail1:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="miR_200:ZEB1:1 Snail1:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="miR_34a:ZEB1:1 Snail1:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="miR_34a:ZEB1:1 miR_200:ZEB1:1 Snail1:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="ATM:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="ATM:ZEB1:1 Snail1:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="ATM:ZEB1:1 miR_200:ZEB1:1 Snail1:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="ATM:ZEB1:1 miR_34a:ZEB1:1 Snail1:ZEB1:1"/>
+      <parameter val="1" idActiveInteractions="ATM:ZEB1:1 miR_34a:ZEB1:1 miR_200:ZEB1:1 Snail1:ZEB1:1"/>
+    </node>
+    <node id="VIM" maxvalue="1">
+      <parameter val="1" idActiveInteractions="Snail1:VIM:1 ZEB1:VIM:1"/>
+    </node>
+    <node id="CDH1" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="PTEN" maxvalue="1">
+      <parameter val="1" idActiveInteractions="p53:PTEN:1"/>
+      <parameter val="1" idActiveInteractions="ATM:PTEN:1"/>
+      <parameter val="1" idActiveInteractions="ATM:PTEN:1 p53:PTEN:1"/>
+    </node>
+    <node id="Casp" maxvalue="1">
+      <parameter val="1" idActiveInteractions="BAX:Casp:1"/>
+    </node>
+    <node id="AKT" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="BAX" maxvalue="1">
+      <parameter val="1" idActiveInteractions="p53:BAX:1"/>
+    </node>
+    <node id="Bcl2" maxvalue="1">
+      <parameter val="1"/>
+      <parameter val="1" idActiveInteractions="SOX2:Bcl2:1"/>
+      <parameter val="1" idActiveInteractions="miR_200:Bcl2:1 SOX2:Bcl2:1"/>
+      <parameter val="1" idActiveInteractions="miR_34a:Bcl2:1 SOX2:Bcl2:1"/>
+      <parameter val="1" idActiveInteractions="miR_34a:Bcl2:1 miR_200:Bcl2:1 SOX2:Bcl2:1"/>
+    </node>
+    <node id="SOX2" maxvalue="1">
+      <parameter val="1" idActiveInteractions="ZEB1:SOX2:1 AKT:SOX2:1"/>
+    </node>
+    <node id="PROLIFERATION" maxvalue="1">
+      <parameter val="1" idActiveInteractions="Mdm2:PROLIFERATION:1"/>
+    </node>
+    <node id="STEMNESS" maxvalue="1">
+      <parameter val="1" idActiveInteractions="SOX2:STEMNESS:1"/>
+    </node>
+    <node id="EMT" maxvalue="1">
+      <parameter val="1"/>
+      <parameter val="1" idActiveInteractions="VIM:EMT:1"/>
+      <parameter val="1" idActiveInteractions="VIM:EMT:1 CDH1:EMT:1"/>
+    </node>
+    <node id="DRUG_RESISTANCE" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="DRUG_SENSITIVITY" maxvalue="1">
+      <parameter val="1"/>
+    </node>
+    <node id="APOPTOSIS" maxvalue="1">
+      <parameter val="1" idActiveInteractions="Casp:APOPTOSIS:1"/>
+    </node>
+    <edge id="DDR:DDR:1" from="DDR" to="DDR" sign="positive" minvalue="1"/>
+    <edge id="DDR:ATM:1" from="DDR" to="ATM" sign="positive" minvalue="1"/>
+    <edge id="ATM:p53:1" from="ATM" to="p53" sign="positive" minvalue="1"/>
+    <edge id="Mdm2:p53:1" from="Mdm2" to="p53" sign="negative" minvalue="1"/>
+    <edge id="ATM:Mdm2:1" from="ATM" to="Mdm2" sign="negative" minvalue="1"/>
+    <edge id="p53:Mdm2:1" from="p53" to="Mdm2" sign="positive" minvalue="1"/>
+    <edge id="PTEN:Mdm2:1" from="PTEN" to="Mdm2" sign="negative" minvalue="1"/>
+    <edge id="AKT:Mdm2:1" from="AKT" to="Mdm2" sign="positive" minvalue="1"/>
+    <edge id="p53:miR_34a:1" from="p53" to="miR_34a" sign="positive" minvalue="1"/>
+    <edge id="Snail1:miR_34a:1" from="Snail1" to="miR_34a" sign="negative" minvalue="1"/>
+    <edge id="ZEB1:miR_34a:1" from="ZEB1" to="miR_34a" sign="negative" minvalue="1"/>
+    <edge id="p53:miR_200:1" from="p53" to="miR_200" sign="positive" minvalue="1"/>
+    <edge id="Snail1:miR_200:1" from="Snail1" to="miR_200" sign="negative" minvalue="1"/>
+    <edge id="ZEB1:miR_200:1" from="ZEB1" to="miR_200" sign="negative" minvalue="1"/>
+    <edge id="ATM:Snail1:1" from="ATM" to="Snail1" sign="positive" minvalue="1"/>
+    <edge id="miR_34a:Snail1:1" from="miR_34a" to="Snail1" sign="negative" minvalue="1"/>
+    <edge id="miR_200:Snail1:1" from="miR_200" to="Snail1" sign="negative" minvalue="1"/>
+    <edge id="ATM:ZEB1:1" from="ATM" to="ZEB1" sign="positive" minvalue="1"/>
+    <edge id="miR_34a:ZEB1:1" from="miR_34a" to="ZEB1" sign="negative" minvalue="1"/>
+    <edge id="miR_200:ZEB1:1" from="miR_200" to="ZEB1" sign="negative" minvalue="1"/>
+    <edge id="Snail1:ZEB1:1" from="Snail1" to="ZEB1" sign="positive" minvalue="1"/>
+    <edge id="Snail1:VIM:1" from="Snail1" to="VIM" sign="positive" minvalue="1"/>
+    <edge id="ZEB1:VIM:1" from="ZEB1" to="VIM" sign="positive" minvalue="1"/>
+    <edge id="ZEB1:CDH1:1" from="ZEB1" to="CDH1" sign="negative" minvalue="1"/>
+    <edge id="ATM:PTEN:1" from="ATM" to="PTEN" sign="positive" minvalue="1"/>
+    <edge id="p53:PTEN:1" from="p53" to="PTEN" sign="positive" minvalue="1"/>
+    <edge id="Snail1:PTEN:1" from="Snail1" to="PTEN" sign="negative" minvalue="1"/>
+    <edge id="BAX:Casp:1" from="BAX" to="Casp" sign="positive" minvalue="1"/>
+    <edge id="PTEN:AKT:1" from="PTEN" to="AKT" sign="negative" minvalue="1"/>
+    <edge id="p53:BAX:1" from="p53" to="BAX" sign="positive" minvalue="1"/>
+    <edge id="Bcl2:BAX:1" from="Bcl2" to="BAX" sign="negative" minvalue="1"/>
+    <edge id="miR_34a:Bcl2:1" from="miR_34a" to="Bcl2" sign="negative" minvalue="1"/>
+    <edge id="miR_200:Bcl2:1" from="miR_200" to="Bcl2" sign="negative" minvalue="1"/>
+    <edge id="SOX2:Bcl2:1" from="SOX2" to="Bcl2" sign="positive" minvalue="1"/>
+    <edge id="miR_34a:SOX2:1" from="miR_34a" to="SOX2" sign="negative" minvalue="1"/>
+    <edge id="miR_200:SOX2:1" from="miR_200" to="SOX2" sign="negative" minvalue="1"/>
+    <edge id="ZEB1:SOX2:1" from="ZEB1" to="SOX2" sign="positive" minvalue="1"/>
+    <edge id="AKT:SOX2:1" from="AKT" to="SOX2" sign="positive" minvalue="1"/>
+    <edge id="Mdm2:PROLIFERATION:1" from="Mdm2" to="PROLIFERATION" sign="positive" minvalue="1"/>
+    <edge id="SOX2:STEMNESS:1" from="SOX2" to="STEMNESS" sign="positive" minvalue="1"/>
+    <edge id="VIM:EMT:1" from="VIM" to="EMT" sign="positive" minvalue="1"/>
+    <edge id="CDH1:EMT:1" from="CDH1" to="EMT" sign="negative" minvalue="1"/>
+    <edge id="APOPTOSIS:DRUG_RESISTANCE:1" from="APOPTOSIS" to="DRUG_RESISTANCE" sign="negative" minvalue="1"/>
+    <edge id="PROLIFERATION:DRUG_SENSITIVITY:1" from="PROLIFERATION" to="DRUG_SENSITIVITY" sign="negative" minvalue="1"/>
+    <edge id="STEMNESS:DRUG_SENSITIVITY:1" from="STEMNESS" to="DRUG_SENSITIVITY" sign="negative" minvalue="1"/>
+    <edge id="EMT:DRUG_SENSITIVITY:1" from="EMT" to="DRUG_SENSITIVITY" sign="negative" minvalue="1"/>
+    <edge id="Casp:APOPTOSIS:1" from="Casp" to="APOPTOSIS" sign="positive" minvalue="1"/>
+  </graph>
+</gxl>
